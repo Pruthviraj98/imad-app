@@ -21,6 +21,7 @@ function createTemplate(data)
     title=data.title;
     list=data.list;
     date=data.date;
+    content=data.content;
     var htmlTemplate=
         `<!doctype html>
         <html>
