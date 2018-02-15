@@ -9,11 +9,26 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-var articleOne={
+var articles=
+{
+'article-one':{
   title:'article-one',
   date:'15 feb 2018',
   list:`<ul> <li>C</li> <li>CPP</li> <li>Javascript</li> <li>PHP</li><li>python</li> </ui>`,
   content:`<h1>I am very Enthusiastic in Techstuffs. Imad attracted me as I got Interested for the mobile application development.</h1>`
+    },
+'article-two':{  
+  title:'article-two',
+  date:'16 feb 2018',
+  list:`<ul> <li>C</li> <li>CPP</li> <li>Javascript</li> <li>PHP</li><li>python</li> </ui>`,
+  content:`<h1>I am telling again that very Enthusiastic in Techstuffs. Imad attracted me as I got Interested for the mobile application development. :p</h1>`
+},
+'article-three':{ 
+  title:'article-three',
+  date:'17 feb 2018',
+  list:`<ul> <li>CPP</li> <li>Javascript</li> <li>PHP</li><li>python</li> </ui>`,
+  content:`<h1>I am telling t=you again and again very Enthusiastic in Techstuffs. Imad attracted me as I got Interested for the mobile application development :P.</h1>`
+}
 };
 
 function createTemplate(data)
@@ -48,8 +63,11 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 
-app.get('/article-one', function( req, res){
-    res.send(createTemplate(articleOne));
+app.get('/articleName', function( req, res){
+    //for ex: articleName==article-one 
+    //articles[articleName]=={}content object for article one
+    var articleName=req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function( req, res){
