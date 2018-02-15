@@ -63,7 +63,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 
-app.get('/articleName', function( req, res){
+app.get('/:articleName', function( req, res){
     //for ex: articleName==article-one 
     //articles[articleName]=={}content object for article one
     var articleName=req.params.articleName;
