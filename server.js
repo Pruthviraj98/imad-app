@@ -12,8 +12,8 @@ app.get('/', function (req, res) {
 var articleOne={
   title:'article-one',
   date:'15 feb 2018',
-  list:'<ul> <li>C</li> <li>CPP</li> <li>Javascript</li> <li>PHP</li><li>python</li> </ui>',
-  content:'<h1>I am very Enthusiastic in Techstuffs. Imad attracted me as I got Interested for the mobile application development.</h1>'
+  list:`<ul> <li>C</li> <li>CPP</li> <li>Javascript</li> <li>PHP</li><li>python</li> </ui>`,
+  content:`<h1>I am very Enthusiastic in Techstuffs. Imad attracted me as I got Interested for the mobile application development.</h1>`
 };
 
 function createTemplate(data)
