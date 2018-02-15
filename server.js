@@ -55,7 +55,7 @@ function createTemplate(data)
         </html>`;  
 
     return htmlTemplate;
-};
+}
 
 
 app.get('/ui/main.js', function (req, res) {
