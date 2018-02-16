@@ -46,19 +46,3 @@ button.onclick=function()
     request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/counter', true);
     request.send(null);
 };
-
-
-var element=document.getElementById("counter");
-var counter=0;
-
-
-element.onclick=function(){
-//make a request to the counter end point;
-counter=counter+1
-
-//capture the response and store it in a variable
-var span=document.getElementById("count");
-
-//render the incremented counter value to the spanned area.
-span.innerHTML=counter.toString();
-}
