@@ -100,7 +100,7 @@ app.get('/submit-name', function(req, res)
 
     /////////////////////////////////////////////
     
-    ////URL: /submit-name?name=XXXXXX
+    ////another method of using query method using : URL: /submit-name?name=XXXXXX
     ///the things after '?' is called as the query parmeter. so replace the param to query this will work than.
 });
 
