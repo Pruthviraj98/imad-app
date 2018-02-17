@@ -30,16 +30,18 @@ button.onclick=function()
     var request=new XMLHttpRequest();
     request.onsteadystatechange=function()
     {
-        if(request.readyState===XMLHttpRequest.DONE)
+                alert((request.responseText).toString());
+        /*if(request.readyState===XMLHttpRequest.DONE)
         {
             if(request.status===200)
             {
                 alert((request.responseText).toString());
-                /*var counter=request.responseText;
+                var counter=request.responseText;
                 var a=document.getElementById('count');
-                a.innerHTML=counter.toString();*/
+                a.innerHTML=counter.toString();
             }
         }
+        */
     };
     
     request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/counter', true);
