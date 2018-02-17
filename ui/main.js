@@ -42,12 +42,13 @@ button.onclick=function(){
 */
 
 
-var nameInput=document.getElementById('name');
-var name=nameInput.value;
+
 var submit=document.getElementById('submit_button');
 
 submit.onclick=function()
 {
+    var nameInput=document.getElementById('name');
+    var name=nameInput.value;
     //create the reqest object
     var request=new XMLHttpRequest();
     //capture the request and stare it in the variable
