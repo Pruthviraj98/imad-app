@@ -70,21 +70,7 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 })
-app.get('/:articleName', function( req, res){
-    //for ex: articleName==article-one 
-    //articles[articleName]=={}content object for article one
-    var articleName=req.params.articleName;
-    res.send(createTemplate(articles[articleName]));
-});
 
-
-app.get('/ui/madi.png', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
-});
-
-
-// Do not change port, otherwise your app won't run on IMAD servers
-// Use 8080 only for local development if you already have apache running on 80
 var names=[];
 app.get('/submit-name', function(req, res)
 {
@@ -103,6 +89,24 @@ app.get('/submit-name', function(req, res)
     ////another method of using query method using : URL: /submit-name?name=XXXXXX
     ///the things after '?' is called as the query parmeter. so replace the param to query this will work than.
 });
+
+
+
+app.get('/:articleName', function( req, res){
+    //for ex: articleName==article-one 
+    //articles[articleName]=={}content object for article one
+    var articleName=req.params.articleName;
+    res.send(createTemplate(articles[articleName]));
+});
+
+
+app.get('/ui/madi.png', function (req, res) {
+  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+});
+
+
+// Do not change port, otherwise your app won't run on IMAD servers
+// Use 8080 only for local development if you already have apache running on 80
 
 
 var port = 80;
