@@ -34,9 +34,10 @@ button.onclick=function()
         {
             if(request.status===200)
             {
-                var counter=request.responseText;
+                alert((request.responseText).toString());
+                /*var counter=request.responseText;
                 var a=document.getElementById('count');
-                a.innerHTML=counter.toString();
+                a.innerHTML=counter.toString();*/
             }
         }
     };
