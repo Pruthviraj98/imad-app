@@ -32,30 +32,6 @@ var articles=
 };
 
 
-var names=[];
-app.get('/submit-name', function(req, res)
-{
-    //////////////////////////////////////////////////
-    ////method of json by using the variable in the url;
-    
-    //get the name from the request object
-    var name=req.query.name ;
-    names.push(name);
-    
-    //JSON= Javascript objects Notation
-    res.send(JSON.stringify(names));
-
-    /////////////////////////////////////////////
-    
-    ////another method of using query method using : URL: /submit-name?name=XXXXXX
-    ///the things after '?' is called as the query parmeter. so replace the param to query this will work than.
-});
-
-
-
-
-
-
 
 function createTemplate(data)
 {
@@ -101,6 +77,25 @@ app.get('/ui/main.js', function (req, res) {
 app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 })
+
+var names=[];
+app.get('/submit-name', function(req, res)
+{
+    //////////////////////////////////////////////////
+    ////method of json by using the variable in the url;
+    
+    //get the name from the request object
+    var name=req.query.name ;
+    names.push(name);
+    
+    //JSON= Javascript objects Notation
+    res.send(JSON.stringify(names));
+
+    /////////////////////////////////////////////
+    
+    ////another method of using query method using : URL: /submit-name?name=XXXXXX
+    ///the things after '?' is called as the query parmeter. so replace the param to query this will work than.
+});
 
 
 app.get('/:articleName', function( req, res){
