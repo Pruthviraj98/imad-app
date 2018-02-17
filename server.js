@@ -78,7 +78,7 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 })
 
-var names=[];
+var names[];
 app.get('/submit-name', function(req, res)
 {
     //////////////////////////////////////////////////
