@@ -42,7 +42,7 @@ button.onclick=function(){
 
 
 
-var nameInput=document.getElementById("name");
+var nameInput=document.getElementById('name');
 var name=nameInput.value;
 var submit=document.getElementById('submit_button');
 
@@ -72,6 +72,6 @@ submit.onclick=function()
     };
 
     //make the request
-    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/sumbit-name?name=' + name, true);
+    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/sumbit-name?name='+name, true);
     request.send(null);
 };
