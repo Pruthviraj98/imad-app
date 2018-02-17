@@ -36,12 +36,12 @@ button.onclick=function()
             {
                 var count=request.responseText;
                 var a=document.getElementById('count');
-                a.innerHTML=count;
+                a.innerHTML=count.toString();
             }
         }
     };
     
-    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/:counter', true);
+    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/count', true);
     request.send(null);
 };
 
