@@ -20,7 +20,7 @@ img.onclick=function(){
 };*/
 
 
-/*
+
 var button=document.getElementById("counter");
 button.onclick=function(){
     var request=new XMLHttpRequest();
@@ -30,7 +30,9 @@ button.onclick=function(){
         {
             if(request.status===200)
             {
-                
+                var count=request.responseText;
+                var a=document.getElementById('count');
+                a.innerHTML=count;
             }
         }
     };
@@ -39,7 +41,7 @@ button.onclick=function(){
     request.send(null);
 };
 
-*/
+
 
 
 
