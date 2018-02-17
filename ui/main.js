@@ -10,19 +10,23 @@ var img = document.getElementById("madi");
 
 var marginLeft=0;
 
-function moveRight(){
+function moveRight()
+{
     marginLeft=marginLeft+1;
     img.style.marginLeft=marginLeft+'px';
 }
 
-img.onclick=function(){
+img.onclick=function()
+{
     var interval=setInterval(moveRight, 100);
 };*/
 
 
 
 var button=document.getElementById("counter");
-button.onclick=function(){
+
+button.onclick=function()
+{
     var request=new XMLHttpRequest();
     request.onsteadystatechange=function()
     {
@@ -37,7 +41,7 @@ button.onclick=function(){
         }
     };
     
-    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/counter', true);
+    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/:counter', true);
     request.send(null);
 };
 
