@@ -20,13 +20,34 @@ img.onclick=function(){
 };*/
 
 
+
+var button=document.getElementById("counter");
+button.onclick=function(){
+    var request=new XMLHttpRequest();
+    request.onsteadystatechange=function()
+    {
+        if(request.readyState===XMLHttpRequest.DONE)
+        {
+            if(request.status===200)
+            {
+                
+            }
+        }
+    };
+    
+    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/counter', true);
+    request.send(null);
+};
+
+
+
+
 var nameInput=document.getElementById("name");
-name=nameInput.value;
+var name=nameInput.value;
 var submit=document.getElementById('submit_button');
 
 submit.onclick=function()
 {
-    
     //create the reqest object
     var request=new XMLHttpRequest();
     //capture the request and stare it in the variable
@@ -44,7 +65,6 @@ submit.onclick=function()
                 {
                 list+='<li>'+names[i]+'</li>';
                 }
-                
                 var ul=document.getElementById('namelist');
                 ul.innerHTML=list;  
             }
