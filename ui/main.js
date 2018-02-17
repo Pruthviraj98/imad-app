@@ -19,14 +19,16 @@ img.onclick=function(){
     var interval=setInterval(moveRight, 100);
 };*/
 
-var button=document.getElementById('counter');
 
-button.onclick=function()
+var nameInput=document.getElementById("name");
+name=nameInput.value;
+var submit=document.getElementById('submit_button');
+
+submit.onclick=function()
 {
     
     //create the reqest object
     var request=new XMLHttpRequest();
-    
     //capture the request and stare it in the variable
     request.onreadystatechange=function()
     {
@@ -35,34 +37,21 @@ button.onclick=function()
             //take some action
             if(request.status===200)
             {
-                var counter=request.responseText;
-                var span=document.getElementById('count');
-                span.innerHTML=counter.toString();
+                var names=request.responseText;
+                names=JSON.parse(names);
+                var list='';
+                for(i=0;i<names.length;i++)
+                {
+                list+='<li>'+names[i]+'</li>';
+                }
+                
+                var ul=document.getElementById('namelist');
+                ul.innerHTML=list;  
             }
         }
     };
 
     //make the request
-    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/counter', true);
+    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/sumbit-name?name=' + name, true);
     request.send(null);
-};
-//submit name
-
-var nameInput=document.getElementById("name");
-name=nameInput.value;
-var submit=document.getElementById('submit_button');
-submit.onclick=function(){
-  //make the request to the server and send the server the name
-  //capute the nammes and render the name as the list
-  
-  var names=['name1', 'name2', 'name3', 'name4'];
-  var list='';
-  for(i=0;i<names.length;i++)
-  {
-      list+='<li>'+names[i]+'</li>';
-  }
-  
-  var ul=document.getElementById('namelist');
-  ul.innerHTML=list;
-  
 };
