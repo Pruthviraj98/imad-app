@@ -34,14 +34,14 @@ button.onclick=function()
         {
             if(request.status===200)
             {
-                var count=request.responseText;
+                var counter=request.responseText;
                 var a=document.getElementById('count');
-                a.innerHTML=count.toString();
+                a.innerHTML=counter.toString();
             }
         }
     };
     
-    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/count', true);
+    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/counter', true);
     request.send(null);
 };
 
