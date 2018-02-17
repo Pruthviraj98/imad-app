@@ -86,13 +86,22 @@ app.get('/ui/madi.png', function (req, res) {
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 var names=[];
-app.get('/submit-name/:name', function(req, res){
+app.get('/submit-name', function(req, res)
+{
+    //////////////////////////////////////////////////
+    ////method of json by using the variable in the url;
+    
     //get the name from the request object
-    var name=req.params.name ;
+    var name=req.query.name ;
     names.push(name);
     
     //JSON= Javascript objects Notation
     res.send(JSON.stringify(names));
+
+    /////////////////////////////////////////////
+    
+    ////URL: /submit-name?name=XXXXXX
+    ///the things after '?' is called as the query parmeter. so replace the param to query this will work than.
 });
 
 
