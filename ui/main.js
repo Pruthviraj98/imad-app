@@ -72,6 +72,6 @@ submit.onclick=function()
     };
 
     //make the request
-    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/sumbit-name?name='+name, true);
+    request.open('GET', 'http://pruthvirajrpatil2016.imad.hasura-app.io/submit-name?name='+name, true);
     request.send(null);
 };
