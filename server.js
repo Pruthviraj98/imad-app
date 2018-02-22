@@ -68,31 +68,6 @@ var articles=
 
 
 
-function createTemplate(data)
-{
-    title=data.title;
-    list=data.list;
-    date=data.date;
-    content=data.content;
-    var htmlTemplate=
-        `<!doctype html>
-        <html>
-        <title>${title}</title>
-        <head>This is the article-one</head>
-        <h2>${date}</h2>
-        <body>
-        <h1>This is the list of Programming languages that I know</h1>
-        ${list}
-        <br>
-        <br>
-        <div class="second" style="background-color:black; color:white">
-        ${content}
-        </div>
-        </body>
-        </html>`;  
-
-    return htmlTemplate;
-}
 
 
 
@@ -132,6 +107,31 @@ app.get('/submit-name', function(req, res)
     ///the things after '?' is called as the query parmeter. so replace the param to query this will work than.
 });
 
+function createTemplate(data)
+{
+    title=data.title;
+    list=data.list;
+    date=data.date;
+    content=data.content;
+    var htmlTemplate=
+        `<!doctype html>
+        <html>
+        <title>${title}</title>
+        <head>This is the article-one</head>
+        <h2>${date}</h2>
+        <body>
+        <h1>This is the list of Programming languages that I know</h1>
+        ${list}
+        <br>
+        <br>
+        <div class="second" style="background-color:black; color:white">
+        ${content}
+        </div>
+        </body>
+        </html>`;  
+
+    return htmlTemplate;
+}
 
 app.get('/:articleName', function( req, res){
     //for ex: articleName==article-one 
