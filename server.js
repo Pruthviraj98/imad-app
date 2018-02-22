@@ -43,19 +43,22 @@ app.get('/test-db', function(req, res){
 
 var articles=
 {
-'article-one':{
+'article-one':
+{
   title:'article-one',
   date:'15 feb 2018',
   list:`<ul> <li>C</li> <li>CPP</li> <li>Javascript</li> <li>PHP</li><li>python</li> </ui>`,
   content:`<h1>I am very Enthusiastic in Techstuffs. Imad attracted me as I got Interested for the mobile application development.</h1>`
-    },
-'article-two':{  
+},
+'article-two':
+{  
   title:'article-two',
   date:'16 feb 2018',
   list:`<ul> <li>C</li> <li>CPP</li> <li>Javascript</li> <li>PHP</li><li>python</li> </ui>`,
   content:`<h1>I am telling again that very Enthusiastic in Techstuffs. Imad attracted me as I got Interested for the mobile application development. :p</h1>`
 },
-'article-three':{ 
+'article-three':
+{ 
   title:'article-three',
   date:'17 feb 2018',
   list:`<ul> <li>CPP</li> <li>Javascript</li> <li>PHP</li><li>python</li> </ui>`,
