@@ -42,8 +42,7 @@ app.get('/test-db', function(req, res)
 
 
 
-var articles=
-{
+var articles={
 'article-one':
 {
   title:'article-one',
@@ -66,10 +65,6 @@ var articles=
   content:`<h1>I am telling t=you again and again very Enthusiastic in Techstuffs. Imad attracted me as I got Interested for the mobile application development :P.</h1>`
 }
 };
-
-
-
-
 
 
 
@@ -136,7 +131,7 @@ function createTemplate(data)
 }
 
 
-app.get('articles/:articleName', function( req, res)
+app.get('/articles/:articleName', function( req, res)
 {
     //for ex: articleName==article-one 
     //articles[articleName]=={}content object for article one
