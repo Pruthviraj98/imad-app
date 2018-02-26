@@ -23,7 +23,8 @@ app.get('/', function (req, res) {
 //new pool creating..
 var pool=new Pool(config);
 
-app.get('/test-db', function(req, res){
+app.get('/test-db', function(req, res)
+{
    //make select request
    //resturn response with results
    pool.query('SELECT * from test', function(err, result){
@@ -98,7 +99,6 @@ app.get('/submit-name', function(req, res)
     var name=req.query.name ;
     names.push(name);
     
-
 
     //JSON= Javascript objects Notation
     res.send(JSON.stringify(names));
