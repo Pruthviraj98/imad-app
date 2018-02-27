@@ -164,7 +164,7 @@ app.post('/create-user', function(req,res)
       }
       else
       {
-          res.send('User suceessfully created'+username, );
+          res.send('User suceessfully created'+username);
       }       
    });
 });
