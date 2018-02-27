@@ -147,14 +147,13 @@ app.get('/hash/:input', function(req, res)
     res.send(hashedString);
 });
 
-
 app.post('/create-user', function(req,res)
 {
     // username, password
    var username=req.body.username;
    var password=req.body.password;
    
-   var salt=crypto.RandomBytes(128).toString('hex');
+   var salt=crypto.randomBytes(128).toString('hex');
    var dbString=hash(password, salt);
    pool.query('INSERT into "user" (username, password) values ($1, $2)', [username, dbString], function(err, result)
    {
@@ -168,6 +167,7 @@ app.post('/create-user', function(req,res)
       }       
    });
 });
+
 
 app.get('/articles/:articleName', function( req, res)
 {
