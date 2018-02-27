@@ -1,6 +1,8 @@
 var express = require('express');
 var morgan = require('morgan');//to help us output logs
 var path = require('path');
+var crypto=require('crypto');
+
 
 var Pool=require('pg').Pool;
 var config={
@@ -130,6 +132,17 @@ function createTemplate(data)
     return htmlTemplate;
 }
 
+
+function hash(input)
+{
+    var hashed=crypto.crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
+    return hashed.toString('hex');
+}
+
+app.get('/hash/:input', function(req, res){
+    var hashedString=hash(req.params.input, 'this-is-some-random-tempererory-string');
+    res.send(hashedString);
+});
 
 app.get('/articles/:articleName', function( req, res)
 {
